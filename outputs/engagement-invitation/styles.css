@@ -1,0 +1,1640 @@
+﻿/* --- Google Fonts Import for Wedding Typography --- */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Great+Vibes&family=Pinyon+Script&display=swap');
+:root {
+  --bg-canvas: #FAF7F2;
+  --bg-card: #F5EFEB;
+  --accent-rosegold: #B76E79;
+  --accent-gold: #D4AF37;
+  --text-main: #3A3335;
+  --footer-bg: #2C1A1D;
+  --rose-shadow: rgba(183, 110, 121, 0.22);
+  --gold-glow: rgba(212, 175, 55, 0.28);
+  --paper-line: rgba(58, 51, 53, 0.08);
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --script: "Great Vibes", "Brush Script MT", cursive;
+  --sans: "Inter", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: auto;
+  color: var(--text-main);
+  font-family: var(--sans);
+  background:
+    url(plain-silk-bg.jpeg);
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+/* Base: Default for Mobile / Phones (Portrait) */
+.envelope-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1100px;
+  background: url("envelope\ copy.jpeg") center/cover no-repeat;
+  transition: opacity 700ms ease, visibility 700ms ease;
+}
+
+/* Laptops & Desktops / Landscape screens */
+@media (min-width: 768px) {
+  .envelope-overlay {
+    background: url("fabric1.jpg") center/cover no-repeat;
+  }
+}
+
+.envelope-overlay.opening {
+  pointer-events: none;
+}
+
+.envelope-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 350ms ease,visibility 350ms ease !important;
+}
+
+/* --- Hero Card with Visible Silk Roses Background --- */
+.hero {
+  position: relative;
+  background-color: #fff7f6; /* Fallback tone */
+  background-image: 
+    /* Very light gradient wash to protect readability without hiding flowers */
+    linear-gradient(
+      to bottom right, 
+      rgba(255, 255, 255, 0.15) 0%, 
+      rgba(255, 245, 242, 0.05) 100%
+    ),
+    url("silk-floral-bg.jpeg"); /* Make sure extension is .jpeg */
+  
+  /* 🌸 Shift focus to show the roses on the right & bottom */
+  background-size: cover;
+  background-position: right bottom; 
+  background-repeat: no-repeat;
+  
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 2.5rem 1.5rem;
+}
+/* --- Elegant Silk Background with Top & Bottom Floral Framing --- */
+.hero.section-panel {
+  position: relative;
+  background-color: #fdfaf7;
+  background-image: 
+    /* Soft translucent gradient to keep text readable */
+    linear-gradient(
+      135deg, 
+      rgba(255, 255, 255, 0.30) 0%, 
+      rgba(255, 248, 245, 0.22) 100%
+    ),
+    url("silk-floral-bg.jpeg"); /* 👈 Update to your exact filename (e.g. silk-bg.png) */
+  
+  /* 🌸 Fixes top cropping: aligns image starting from the top-center */
+  background-position: center top; 
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 3rem 1.5rem 2.5rem; /* Adds balanced breathing room for top flowers */
+}
+
+/* 3D Rings Monogram */
+.rings-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-rings-img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 22px rgba(130, 80, 85, 0.35));
+}
+
+/* Text glow & depth over silk texture */
+
+.hero .eyebrow,
+.hero .hero-date {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95);
+}
+
+/* --- Metallic Gold Foil Text --- */
+.hero h1 {
+  position: relative;
+  z-index: 2;
+  color: #9e6f1a; /* Elegant champagne gold */
+  text-shadow: 0 1px 2px rgba(192, 160, 32, 0.9),0 2px 6px rgba(80, 40, 20, 0.15);
+  font-family: 'Pinyon Script', cursive;
+  font-size: clamp(5rem, 9vw, 4.2rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+/* 🔍 Targets ONLY the space around the '&' */
+.hero h1 .amp,
+.hero h1 span {
+  display: block;
+  margin-top: -0.35em;    /* Pulls '&' closer to Nikita */
+  margin-bottom: -0.35em; /* Pulls Subham closer to '&' */
+  font-size: 0.85em;      /* Keeps the ampersand balanced and proportional */
+}
+
+
+/* ==========================================================================
+   FINAL ENVELOPE COMPONENT (MATCHED TO REFERENCE)
+   ========================================================================== */
+
+/* --- Outer Envelope Container --- */
+.envelope {
+  position: relative;
+  z-index: 2;
+  width: min(88vw, 370px);
+  aspect-ratio: 1.42;
+  border-radius: 12px;
+  background: url("envelope-pink-bg.jpeg") center/100% 100% no-repeat !important;
+  box-shadow: 0 16px 36px rgba(160, 85, 105, 0.22);
+  overflow: visible !important;
+  transform: translateZ(0);
+}
+
+/* 1. Base Static Background (Never shifts color) */
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: url("envelope1.jpg") center/100% 100% no-repeat !important;
+  z-index: 1;
+}
+
+/* 2. Front Bottom Pocket (Locked in foreground) */
+.envelope-front {
+  position: absolute;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  inset: 0;
+  border-radius: 12px;
+  background: url("envelope1.jpg") center/100% 100% no-repeat !important;
+  clip-path: polygon(0 45%, 50% 52%, 100% 45%, 100% 100%, 0 100%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* Bottom Crease Lines (Rising from bottom corners) */
+.envelope-front::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 100'%3E%3Cpolyline points='0,100 50,48 100,100' fill='none' stroke='rgba(70,45,25,0.2)' stroke-width='0.45' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+
+/* 3. Top Flap (Extended down to cover through the bottom of the seal) */
+.envelope-flap {
+  position: absolute;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0;
+  background: url("envelope-top.jpeg") top center/150% 90% no-repeat !important;
+  /* Extends point down to 64% */
+  clip-path: polygon(0 0, 100% 0, 50% 64%) !important;
+  z-index: 5;
+  transform-origin: top center ;
+  transition: transform 1000ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform;
+}
+
+/* Top Flap Shadow cast downward onto the lower pocket */
+.envelope-flap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 100'%3E%3Cpolyline points='0,0 50,64 100,0' fill='none' stroke='rgba(70,45,25,0.30)' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+/* 4. Wax Seal Centered Directly Over Flap Point */
+.wax-seal {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  cursor: pointer;
+  filter: drop-shadow(0 6px 12px rgba(100, 30, 45, 0.35));
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+/* 5. Click/Opening Action */
+.opening .envelope-flap,
+.envelope.opening .envelope-flap {
+  transform: rotateX(180deg) !important;
+  z-index: 3 !important;
+}
+
+/* Instantly fade the top crease lines when open so they never look inverted */
+.opening .envelope-flap::after,
+.envelope.opening .envelope-flap::after {
+  opacity: 0 !important;
+}
+
+.opening .wax-seal,
+.envelope.opening .wax-seal {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* Golden Light radiating from inside */
+.golden-glow {
+  position: absolute;
+  top: -90;
+  left: 5%;
+  right: 5%;
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+  background: radial-gradient(ellipse at 50% 90%, rgba(255, 255, 220, 1) 0%, rgba(255, 225, 77, 0.9) 35%, rgba(224, 185, 45, 0.5) 65%,transparent 85%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transform: scaleY(0.4) translateY(20px);
+  filter: blur(10px);
+ 
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 700ms ease, transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.opening .golden-glow,
+.envelope.opening .golden-glow {
+  opacity: 0.9;
+  transform: scaleY(1.4) translateY(-15px);
+  filter: blur(16px) drop-shadow(0 0 20px rgba (255 ,215 ,0 ,0.6)) ;
+}
+
+.envelope.opening .golden-glow,
+.opening .envelope .golden-glow {
+  opacity: 1;
+  transform: scale(1.4) translateY(-10%);
+}
+
+.envelope-overlay.hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 800ms ease, visibility 800ms ease !important;
+}
+
+/* Centered, slow-floating card */
+.envelope-letter {
+  position: absolute !important;
+  left: 50% !important;
+  top: 10% !important;
+  width: 84% !important;
+  height: 78% !important;
+  transform: translate(-50%, 0) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, #fffdfa, #fbf4ec) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border-radius: 8px !important;
+  z-index: 3 !important;
+  opacity: 0.9;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 1400ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 1400ms ease, opacity 800ms ease !important;
+}
+
+/* Flap Opens & Letter Rises */
+.envelope.opening .envelope-letter,
+.opening .envelope-letter {
+  transform: translate(-50%, -85%) !important;
+  opacity: 1 !important;
+  z-index: 5 !important;
+  box-shadow: 0 -15px 35px rgba(255, 215, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.4), 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+.letter-content h2 {
+  margin: 0;
+  color: var(--accent-gold);
+  font-family: var(--script);
+  font-size: clamp(2.3rem, 10vw, 4rem);
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.letter-content p {
+  margin: 4px 0 0;
+  color: var(--accent-rosegold);
+  font-family: var(--serif);
+  font-size: clamp(1rem, 4vw, 1.28rem);
+  font-weight: 700;
+}
+
+.wax-seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  border: 0;
+  border-radius: 48% 52% 49% 51% / 51% 48% 52% 49%;
+  cursor: pointer;
+  background: radial-gradient(circle at 35% 30%, #d14a5b 0%, #8b1e2d 50%, #4a0c14 100%);
+  box-shadow: 0 8px 20px rgba(70, 30, 25, 0.25), inset 0 2px 5px rgba(255, 240, 235, 0.7), inset 0 -4px 8px rgba(60, 20, 15, 0.5);
+  transform: translate(-50%, -50%);
+  transition: transform 250ms ease, opacity 500ms ease;
+  will-change: transform, opacity;
+}
+
+.wax-seal::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 3px solid rgba(255, 230, 220, 0.4);
+  border-radius: 49% 51% 52% 48% / 50% 52% 48% 50%;
+  box-shadow: inset 0 3px 6px rgba(50, 15, 10, 0.4);
+  pointer-events: none;
+}
+
+.wax-seal::after {
+  content: '';
+  position: absolute;
+  inset: -25px;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.wax-seal:hover,
+.wax-seal:focus-visible {
+  transform: translate(-50%, -50%) scale(1.02);
+  outline: none;
+}
+
+.opening .wax-seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.72);
+}
+
+#monogramImage,
+.wax-seal img {
+  position: relative;
+  z-index: 2;
+  display: block !important;
+  width: 90% !important;
+  height: 90% !important;
+  object-fit: contain;
+  mix-blend-mode: normal !important;
+  filter: brightness(1.45) contrast(1.2) drop-shadow(0 0 4px rgba(255,235,170,0.45)) drop-shadow(0 2px 4px rgba(0,0,0,0.4)) !important;
+}
+
+.seal-hint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% + 122px);
+  z-index: 2;
+  margin: 0;
+  text-align: center;
+  color: rgba(58, 51, 53, 0.7);
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.opening .seal-hint {
+  opacity: 0 !important;
+  transition: opacity 300ms ease !important;
+}
+
+.sparkle-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sparkle,
+.confetti {
+  position: fixed;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: var(--color);
+  opacity: 0;
+  transform: translate3d(0, 0, 0) scale(0.4);
+  animation: burst 900ms ease-out forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes burst {
+  18% { opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--dx), var(--dy), 0) scale(1);
+  }
+}
+
+.page-shell {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 18px 14px 0;
+}
+
+.section-panel {
+  position: relative;
+  margin: 16px 0;
+  padding: clamp(26px, 7vw, 48px) 18px;
+  overflow: hidden;
+  border: 1px solid rgba(183, 110, 121, 0.18);
+  border-radius: 8px;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.55)0%, rgba(255, 248, 245, 0.50)100%),
+  url("plain-silk-bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 18px 38px rgba(44, 26, 29, 0.08);
+}
+
+
+.section-panel::before,
+.section-panel::after {
+  content: "";
+  position: absolute;
+  width: 118px;
+  height: 118px;
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 50%;
+  opacity: 0.65;
+}
+
+.section-panel::before {
+  left: -58px;
+  top: -58px;
+}
+
+.section-panel::after {
+  right: -58px;
+  bottom: -58px;
+}
+
+.hero {
+  min-height: calc(100vh - 32px);
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  gap: 14px;
+}
+
+/* --- 3D Rings Monogram Graphic --- */
+.rings-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.0rem auto 0.8rem auto;
+  width: 100%;
+}
+
+.hero-rings-img {
+  width: 100%;
+  max-width: 250px; /* Ideal width for the diagonal 3D render */
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+
+  /* ✨ Warm rose-gold drop shadow for realistic depth on the card */
+  filter: drop-shadow(0 8px 20px rgba(183, 110, 121, 0.25));
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+
+/* Mobile responsive scaling */
+@media (max-width: 480px) {
+  .hero-rings-img {
+    max-width: 200px;
+  }
+}
+
+.hero-date,
+.blessing,
+.parents,
+.scratch-note {
+  margin: 0;
+  color: rgba(58, 51, 53, 0.76);
+  font-family: var(--serif);
+  font-size: clamp(1.08rem, 4vw, 1.35rem);
+}
+
+.eyebrow {
+  margin: 0.8rem 0 0.4rem 0;
+  color: rgba(58, 51, 53, 0.85);
+  font-family: var(--serif);
+  /* 🔍 Increase the clamp values to make it bigger */
+  font-size: clamp(1.3rem, 5vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+h1,
+h2,
+h3,
+p {
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  margin: 0;
+  color: var(--accent-gold);
+  font-family: var(--script);
+  font-size: clamp(4.5rem, 19vw, 8rem);
+  font-weight: 400;
+  line-height: 0.9;
+  text-shadow: 0 1px 0 #fff6ce, 0 8px 24px rgba(212, 175, 55, 0.22);
+}
+
+h2 {
+  margin: 0;
+  color: var(--accent-rosegold);
+  font-family: var(--serif);
+  font-size: clamp(2rem, 8vw, 3.15rem);
+  line-height: 1;
+}
+
+h3 {
+  margin: 0 0 5px;
+  color: var(--text-main);
+  font-family: var(--serif);
+  font-size: 1.35rem;
+}
+
+.section-heading {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.tiny-flourish {
+  width: 74px;
+  height: 12px;
+  opacity: 0.85;
+  background: radial-gradient(circle at 50% 50%, var(--accent-gold) 0 4px, transparent 5px), linear-gradient(90deg, transparent, var(--accent-rosegold), transparent);
+}
+
+.scratch-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1.99;
+  margin: 0 auto 14px;
+  overflow: hidden;
+  border: 2px solid rgba(183, 110, 121, 0.48);
+  border-radius: 40px;
+  background: #fff9f2;
+  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.52);
+}
+
+.date-reveal {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  text-align: center;
+}
+
+.date-reveal span {
+  color: var(--accent-rosegold);
+  font-family: var(--serif);
+  font-size: clamp(2rem, 9vw, 3.35rem);
+  font-weight: 700;
+}
+
+#scratchCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+.scratch-note {
+  text-align: center;
+}
+
+.formal-card {
+  text-align: center;
+  padding-top: 72px;
+}
+
+.formal-card p {
+  max-width: 58ch;
+  margin: 14px auto 0;
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 4vw, 1.45rem);
+  line-height: 1.55;
+}
+
+.floral-garland {
+  position: absolute;
+  top: 17px;
+  left: 50%;
+  z-index: 1;
+  width: min(78%, 430px);
+  height: 48px;
+  transform: translateX(-50%);
+}
+
+.floral-garland::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(183, 110, 121, 0.62), transparent);
+}
+
+.floral-garland span {
+  position: absolute;
+  top: 6px;
+  width: 34px;
+  height: 22px;
+  border-radius: 50% 0 50% 0;
+  background: linear-gradient(135deg, rgba(183, 110, 121, 0.72), rgba(255, 232, 221, 0.92));
+  transform: rotate(var(--rot));
+}
+
+.floral-garland span:nth-child(1) { left: 4%; --rot: -32deg; }
+.floral-garland span:nth-child(2) { left: 25%; --rot: 22deg; background: linear-gradient(135deg, rgba(212, 175, 55, 0.62), rgba(255, 246, 206, 0.92)); }
+.floral-garland span:nth-child(3) { left: 46%; --rot: -18deg; }
+.floral-garland span:nth-child(4) { right: 25%; --rot: 30deg; background: linear-gradient(135deg, rgba(212, 175, 55, 0.62), rgba(255, 246, 206, 0.92)); }
+.floral-garland span:nth-child(5) { right: 4%; --rot: -22deg; }
+
+.ganesha {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto 8px;
+  color: var(--accent-gold);
+  font-family: var(--serif);
+  font-size: 3rem;
+  line-height: 1;
+  text-shadow: 0 8px 18px var(--gold-glow);
+}
+
+.timeline {
+  display: grid;
+  gap: 14px;
+}
+
+.timeline-item {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 78px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--paper-line);
+}
+
+.timeline-item:last-child {
+  border-bottom: 0;
+}
+
+.timeline-item time {
+  color: var(--accent-rosegold);
+  font-weight: 700;
+}
+
+.timeline-item p {
+  margin: 0;
+  color: rgba(58, 51, 53, 0.72);
+  line-height: 1.45;
+}
+
+.venue-link {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  margin: 18px auto 0;
+  padding: 12px 18px;
+  color: var(--footer-bg);
+  text-decoration: none;
+  border: 1px solid rgba(183, 110, 121, 0.36);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(183, 110, 121, 0.18));
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.venue-link:hover,
+.venue-link:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(44, 26, 29, 0.1);
+  outline: none;
+}
+
+.blessing-form {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 14px;
+}
+
+.blessing-form label {
+  display: grid;
+  gap: 7px;
+  color: rgba(58, 51, 53, 0.74);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.blessing-form input,
+.blessing-form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  color: var(--text-main);
+  border: 1px solid rgba(183, 110, 121, 0.28);
+  border-radius: 8px;
+  background: rgba(255, 252, 247, 0.82);
+  outline: none;
+  resize: vertical;
+}
+
+.blessing-form input:focus,
+.blessing-form textarea:focus {
+  border-color: var(--accent-rosegold);
+  box-shadow: 0 0 0 3px rgba(183, 110, 121, 0.13);
+}
+
+.blessing-form button {
+  min-height: 50px;
+  color: #fffaf8;
+  font-weight: 700;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent 34%), var(--accent-rosegold);
+  box-shadow: 0 12px 18px rgba(183, 110, 121, 0.24);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.blessing-form button:hover,
+.blessing-form button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 22px rgba(183, 110, 121, 0.3);
+  outline: none;
+}
+
+.messages {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 12px;
+  max-height: 330px;
+  margin-top: 22px;
+  padding-right: 4px;
+  overflow-y: auto;
+}
+
+.message-card {
+  padding: 14px;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 252, 247, 0.68);
+}
+
+.message-card strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--accent-rosegold);
+  font-family: var(--serif);
+  font-size: 1.35rem;
+}
+
+.message-card p {
+  margin: 0;
+  color: rgba(58, 51, 53, 0.78);
+  line-height: 1.45;
+}
+
+.empty-state {
+  margin: 0;
+  text-align: center;
+  color: rgba(58, 51, 53, 0.62);
+  font-family: var(--serif);
+  font-size: 1.18rem;
+}
+
+.footer-card {
+  position: relative;
+  min-height: 310px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  margin: 18px -14px -18;
+  padding: 42px 18px 14px;
+  overflow: hidden;
+  text-align: center;
+  color: #fff8f4;
+  background: radial-gradient(circle at 50% 0, rgba(212, 175, 55, 0.14), transparent 16rem), var(--footer-bg);
+}
+
+.footer-card p {
+  margin: 0;
+  margin-bottom: 0 !important;
+  padding-bottom: 4px;
+  color: rgba(255, 248, 244, 0.72);
+  font-size: 0.82rem;
+  letter-spacing: 0;
+}
+
+.footer-card h2 {
+  color: var(--accent-gold);
+  font-family: var(--script);
+  font-size: clamp(4rem, 16vw, 6.8rem);
+  font-weight: 400;
+  line-height: 0.95;
+  text-shadow: 0 10px 24px rgba(212, 175, 55, 0.16);
+}
+
+.footer-card span {
+  color: rgba(255, 248, 244, 0.82);
+  font-family: var(--serif);
+  font-size: clamp(1rem, 4vw, 1.28rem);
+}
+
+.footer-card small {
+  position: absolute;
+  bottom: 16px;
+  left: 14px;
+  right: 14px;
+  color: rgba(255, 248, 244, 0.58);
+  font-size: 0.78rem;
+}
+
+.footer-floral {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  opacity: 0.26;
+  background:
+    radial-gradient(ellipse at 28% 30%, var(--accent-rosegold) 0 13px, transparent 14px),
+    radial-gradient(ellipse at 55% 28%, var(--accent-gold) 0 10px, transparent 11px),
+    radial-gradient(ellipse at 43% 55%, #fff8f4 0 8px, transparent 9px),
+    linear-gradient(45deg, transparent 47%, var(--accent-gold) 48% 50%, transparent 51%);
+}
+
+.footer-floral-left {
+  left: -26px;
+  top: -24px;
+  transform: rotate(12deg);
+}
+
+.footer-floral-right {
+  right: -26px;
+  bottom: 18px;
+  transform: rotate(192deg);
+}
+
+@media (min-width: 680px) {
+  .page-shell {
+    padding-inline: 22px;
+  }
+
+  .section-panel {
+    padding-inline: 42px;
+  }
+
+  .hero {
+    min-height: 760px;
+  }
+
+  .blessing-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .blessing-form label:nth-child(2),
+  .blessing-form button {
+    grid-column: 1 / -1;
+  }
+
+  .footer-card {
+    margin-inline: -22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+
+/* --- Golden Confetti Particles --- */
+.confetti-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 2px;
+  animation: confettiBurst 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes confettiBurst {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty)) rotate(var(--rot)) scale(0.3);
+  }
+}
+
+/* --- Confirmation Message Styling --- */
+.blessing-sent-msg {
+  margin-top: 14px;
+  font-family: 'Pinyon Script', cursive;
+  font-size: 1.65rem;
+  color: #9e6f1a;
+  text-align: center;
+  line-height: 1.2;
+  opacity: 0;
+  animation: fadeInMsg 0.8s ease forwards;
+}
+
+@keyframes fadeInMsg {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Radiant Golden Light Flare --- */
+.envelope.opening::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.2);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 245, 190, 1) 0%,
+    rgba(255, 215, 0, 0.85) 30%,
+    rgba(212, 175, 55, 0.5) 60%,
+    rgba(212, 175, 55, 0) 80%
+  );
+  box-shadow: 
+    0 0 60px rgba(255, 220, 100, 0.9),
+    0 0 120px rgba(212, 175, 55, 0.7);
+  z-index: 15;
+  pointer-events: none;
+  animation: goldenLightFlash 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes goldenLightFlash {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(2.8);
+    filter: blur(4px);
+  }
+  70% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(3.6);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(4.4);
+    filter: blur(14px);
+  }
+}
+
+
+/* Mobile Hero Card Adjustments */
+@media (max-width: 767px) {
+  .hero {
+    min-height: 100dvh;
+    padding: 28px 20px 36px 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Scale Monogram Ring to fit screen height */
+  .hero-monogram,
+  .hero img.monogram {
+    max-width: min(130px, 32vw) !important;
+    height: auto !important;
+    margin-top: -25px;
+    margin-bottom: 12px !important;
+  }
+
+  /* Subtitle text */
+  .hero .welcome-text {
+    font-size: 1.0rem !important;
+    letter-spacing: 0.15em !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Couple Names */
+  .hero h1,
+  .hero .couple-names {
+    font-size: 3.5rem !important;
+    line-height: 1.15 !important;
+    margin: 4px 0 !important;
+  }
+
+  .hero .ampersand {
+    font-size: 1.6rem !important;
+    margin: 2px 0 !important;
+  }
+
+  /* Bottom Blessing Tagline */
+  .hero .tagline,
+  .hero p:last-of-type {
+    font-size: 1.0rem !important;
+    line-height: 1.4 !important;
+    margin-top: 14px !important;
+    padding: 0 10px;
+    opacity: 0.9;
+  }
+  @media (max-width: 767px) {
+  /* 1. Remove all outer page margins and borders */
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden;
+    background: transparent !important;
+  }
+
+  /* 2. Make page wrapper full-bleed */
+  .page-shell,
+  main {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* 3. Make hero card stretch edge-to-edge with no rounded outer corners */
+  .hero {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100dvh;
+    margin: 0 !important;
+    border-radius: 0 !important; /* Removes the rounded corner gaps */
+    border: none !important;
+    box-shadow: none !important;
+    padding: 24px 16px !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+}
+}
+
+/* Floating Dove Flight Animation */
+/* Base Container */
+#doveFlightContainer,
+.dove-flight-container {
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 25% !important;
+  width: 240px !important;
+  height: 240px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+  z-index: 999999 !important;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 0);
+}
+
+/* Flying State */
+#doveFlightContainer.fly,
+.dove-flight-container.fly {
+  visibility: visible !important;
+  animation: soarToTopRight 3.5s cubic-bezier(0.22,0.61,0.36,1) forwards !important;
+}
+
+.dove-flying-video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  background: transparent !important;
+}
+
+/* Moves physically across both left/bottom and transform */
+@keyframes soarToTopRight {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.6);
+    left: 50%;
+    bottom: 25%;
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(0.8);
+    left: 55%;
+    bottom: 35%;
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+    left: 75%;
+    bottom: 70%;
+  }
+  85% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    /* Flies past the top-right edge */
+    left: 110%;
+    bottom: 115%;
+    transform: translate(-50%, 0) scale(1.15);
+  }
+}
+
+/* Elegant Success Toast */
+.wishes-toast {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%) translateY(-5px);
+  width: max-content;
+  max-width: 90%;
+  margin-top: 14px;
+  margin-bottom: 24px;
+  padding: 10px 18px;
+  background: rgba(35, 10, 15, 0.92);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: #fff;
+  font-size: 0.9rem;
+  z-index: 10;
+  
+  /* Smooth Fade & Slide */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.wishes-toast.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.wishes-toast h3 {
+  margin: 0;
+  color: #f7d88b;
+  font-size: 1.05rem;
+}
+
+.wishes-toast p {
+  margin: 4px 0 0 0;
+  color: #f0e6dd;
+  font-size: 0.85rem;
+}
+
+/* Clean layout alignment for the footer & page */
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+.page-shell {
+  padding-top: 18px !important;
+  padding-bottom: -5px !important; /* Matches top 18px perfectly */
+  margin: 0 auto !important;
+}
+
+.section-panel:last-of-type,
+footer.section-panel,
+.footer-card {
+  margin-bottom: 0 !important;
+}
+
+/* DELETE THESE LINES (1279 - 1286): */
+#doveFlightContainer,
+.dove-flight-container {
+  height: 0 !important;
+  position: fixed !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+/* 1. Collapse the invisible space when toast is inactive */
+.wishes-toast {
+  display: none !important; /* Prevents it from taking up empty space */
+  margin: 10px 0 10px 0 !important;
+}
+
+.wishes-toast.active {
+  display: block !important;
+}
+
+/* 2. Reduce the gap between the form and the footer card */
+.blessing-form,
+form {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* If you have a messages container or empty state below the form */
+.messages,
+.empty-state {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+}
+
+/* 3. Pull the footer card up closer to the form */
+.footer-card {
+  margin-top: 30px !important; /* Default was 18px+ */
+  margin-bottom: -30px !important;
+  padding-bottom: 10px;
+}
+.music-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(35, 10, 15, 0.85); /* Matches invitation theme */
+  border: 1px solid rgba(212, 175, 55, 0.5); /* Gold border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.music-toggle:hover {
+  transform: scale(1.08);
+}
+
+.music-toggle img {
+  width: 50px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+/* Compact music toggle button */
+.music-toggle-btn {
+  width: 50px !important;
+  height: 50px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  background: rgba(35, 10, 15, 0.85) !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Scaled-down inner icon */
+.music-icon {
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+/* Force dove visibility and dimensions during flight */
+.dove-flight-container.fly {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 999999 !important;
+}
+
+.dove-flight-container.fly video,
+.dove-flight-container.fly .dove-flying-video {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 260px !important;
+  height: 260px !important;
+}
+/* Ensure dove container is rendered, visible, and above everything */
+#doveFlightContainer.dove-flight-container.fly {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 9999999 !important;
+  pointer-events: none !important;
+}
+
+/* Force video to have real dimensions and be fully visible */
+#doveFlightContainer video,
+#doveVideo {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 260px !important;
+  height: 260px !important;
+  object-fit: contain !important;
+}
+/* Unconditionally free the dove container from clipping */
+#doveFlightContainer.dove-flight-container {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 260px !important;
+  height: 260px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 2147483647 !important; /* Highest possible layer */
+  pointer-events: none !important;
+}
+
+#doveFlightContainer.dove-flight-container.fly {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  animation: doveFlightPath 8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards !important;
+}
+
+#doveVideo.dove-flying-video {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: transparent !important;
+}
+/* Dove Base State */
+#doveFlightContainer {
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 25% !important;
+  width: 260px !important;
+  height: 260px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+  z-index: 2147483647 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Dove Flying State */
+#doveFlightContainer.fly {
+  visibility: visible !important;
+  animation: soarToTopRight 4.5s ease-out forwards !important;
+}
+
+#doveFlightContainer video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  background: transparent !important;
+}
+
+/* Diagonal trajectory: from center-bottom to top-right out of screen */
+@keyframes soarToTopRight {
+  0% {
+    opacity: 0;
+    left: 50%;
+    bottom: 25%;
+    transform: translate(-50%, 0) scale(0.5);
+  }
+  15% {
+    opacity: 1;
+    left: 55%;
+    bottom: 35%;
+    transform: translate(-50%, 0) scale(0.85);
+  }
+  60% {
+    opacity: 1;
+    left: 75%;
+    bottom: 70%;
+    transform: translate(-50%, 0) scale(1);
+  }
+  90% {
+    opacity: 0.8;
+    left: 95%;
+    bottom: 105%;
+    transform: translate(-50%, 0) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    left: 110%; /* Exits past the right edge */
+    bottom: 120%; /* Exits past the top edge */
+    transform: translate(-50%, 0) scale(1.2);
+  }
+}
+
+/* ==========================================
+   DOVE FLIGHT ANIMATION (Diagonal to Top-Right)
+   ========================================== */
+
+#doveFlightContainer,
+.dove-flight-container {
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 25% !important;
+  width: 240px !important;
+  height: 240px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+  z-index: 999999 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translate(-50%, 0);
+}
+
+#doveFlightContainer.fly,
+.dove-flight-container.fly {
+  visibility: visible !important;
+  animation: doveSoarTopRight 3.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
+}
+
+#doveVideo,
+.dove-flying-video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  background: transparent !important;
+}
+
+@keyframes doveSoarTopRight {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.5);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(calc(-50% + 10vw), -15vh) scale(0.85);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(calc(-50% + 45vw), -65vh) scale(1.05);
+  }
+  85% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + 80vw), -135vh) scale(1.2);
+  }
+}
+
+footer {
+  background-image: url('footer.png');
+  background-size: cover;
+  background-position: center right;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff4e6;
+  text-align: center;
+}
+
+.footer-card {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 380px !important;
+  background-image: url('./footer.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  /*padding-top: 75px !important;
+  padding-bottom: 25px !important;
+  justify-content: flex-start !important;*/
+  
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 87px 20px 25px 20px !important;
+  box-sizing: border-box !important;
+  overflow: hidden;
+}
+
+/* Hide old individual floral corner elements */
+.footer-floral {
+  display: none !important;
+}
+
+/* Text styling to match the golden floral vibe */
+.footer-card .footer-tagline {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f7d488;
+  margin-bottom: 6px;
+}
+
+.footer-card .footer-names {
+  font-size: 32px;
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  color: #ffffff;
+  margin: 6px 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.footer-card .footer-date {
+  font-size: 14px;
+  color: #f5dfb8;
+  margin-bottom: 12px;
+}
+
+.footer-card .footer-credit {
+  font-size: 13px;
+  color: #ffd1dc;
+  margin: 0;
+  opacity: 0.95;
+}

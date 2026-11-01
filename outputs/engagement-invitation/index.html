@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FAF7F2">
+  <title>Nikita & Subham | Engagement Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="envelope-overlay" id="envelopeOverlay" aria-label="Open invitation envelope">
+    <div class="floral-frame" aria-hidden="true">
+      <div class="floral-corner floral-top-right"></div>
+      <div class="floral-corner floral-bottom-left"></div>
+    </div>
+    <div class="envelope" aria-hidden="true">
+      <div class="envelope-back"></div>
+      <div class="golden-glow" aria-hidden="true"></div>
+      <div class="envelope-flap"></div>
+      <div class="envelope-front"></div>
+    </div>
+    <button class="wax-seal" id="waxSeal" type="button" aria-label="Tap to open invitation">
+      <img id="monogramImage" src="monogram.png" alt="Nikita and Subham monogram">
+    </button>
+    <p class="seal-hint"><br>Tap the seal to open</p>
+    <div class="sparkle-layer" id="sparkleLayer" aria-hidden="true"></div>
+  </div>
+
+  <main class="page-shell">
+    <section class="hero section-panel" aria-labelledby="heroTitle">
+      <div class="floral-frame" aria-hidden="true">
+      <div class="rings-wrapper">
+        <img src="rings-monogram2.png" class="hero-rings-img">
+      </div>
+      <p class="eyebrow" id="heroTitle">Welcome to the Engagement of</p><br>
+      <h1>Nikita <br>&amp;<br> Subham</h1>
+      <p class="hero-date">A new chapter begins in love, laughter, and blessings.</p>
+    </section>
+
+    <section class="scratch-section section-panel" aria-labelledby="dateRevealTitle">
+      <div class="section-heading">
+        <span class="tiny-flourish"></span>
+        <h2 id="dateRevealTitle">Save the Date</h2>
+      </div>
+      <div class="scratch-card" id="scratchCard">
+        <div class="date-reveal">
+          <span>13th December 2026</span>
+        </div>
+        <canvas id="scratchCanvas" aria-label="Scratch here to reveal the date"></canvas>
+      </div>
+      <p class="scratch-note" id="scratchStatus">Scratch the golden foil to reveal our special day.</p>
+    </section>
+
+    <section class="formal-card section-panel" aria-labelledby="formalInviteTitle">
+      <div class="floral-garland" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="ganesha" aria-hidden="true">ॐ</div>
+      <p class="blessing">With the divine blessings of Lord Ganesha</p>
+      <h2 id="formalInviteTitle">You Are Cordially Invited</h2>
+      <p>
+        Together with their families, the parents of Nikita and Subham request the pleasure of your presence as they exchange rings and begin their beautiful journey toward forever.
+      </p>
+      <p class="parents">
+        Please join us in showering the couple with your love, blessings, and joyful wishes on this auspicious celebration.
+      </p>
+    </section>
+
+    <section class="timeline-section section-panel" aria-labelledby="timelineTitle">
+      <div class="section-heading">
+        <span class="tiny-flourish"></span>
+        <h2 id="timelineTitle">Venue &amp; Schedule</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <time>10:00 AM</time>
+          <div>
+            <h3>Guest Welcome</h3>
+            <p>Floral greetings, refreshments, and family portraits.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <time>12:30 PM</time>
+          <div>
+            <h3>Ring Ceremony</h3>
+            <p>The engagement ritual followed by blessings from elders.</p>
+          </div>
+        </article>
+        
+      </div>
+      <a class="venue-link" href="https://www.google.com/maps?sca_esv=7982127b810f16d7&output=search&q=ambika+mandap+keonjhar&source=lnms&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832cK-OlyrFp0q_lDSVqWSWpBfB76Efuc1JKh3mTeuQNr6wIBAigBdBXBL4JsBsEFwCFBfKVNegcYsjQ8njFxXoQp42Wp8MeQRoC8CBv1iCV1uFCcObGTHwgl6ea3EjccPVNwfLegDyMMCsXbVfi_czBnhVz3chElGOFQYJz5re8UoCF--zg&entry=mc&ved=1t:200715&ictx=111" target="_blank" rel="noopener noreferrer" aria-label="Open Fulai Garden Hall in Google Maps">
+        <span aria-hidden="true">📍</span>
+        <strong>Ambika Mandap</strong>
+      </a>
+    </section>
+
+    <section class="guestbook section-panel" aria-labelledby="guestbookTitle">
+      <div class="section-heading">
+        <span class="tiny-flourish"></span>
+        <h2 id="guestbookTitle">Shower your Love</h2>
+      </div>
+      <form class="blessing-form" id="blessingForm">
+  <label>
+    <span>Your Name</span>
+    <input id="guestName" type="text" autocomplete="name" maxlength="40" required>
+  </label>
+  <label>
+    <span>Your Message</span>
+    <textarea id="guestMessage" rows="4" maxlength="180" required></textarea>
+  </label>
+  <button type="submit">Send your Wishes</button>
+
+  <div id="wishesToast" class="wishes-toast">
+    <div>Your Blessing is on its Way! ✨</div>
+    <div>Thank you for sending your warm wishes to Nikita & Subham 🤗</div>
+  </div>
+</form>
+    <footer class="footer-card">
+      <div class="footer-floral footer-floral-left" aria-hidden="true"></div>
+      <div class="footer-floral footer-floral-right" aria-hidden="true"></div>
+      <span>WITH LOVE</span><br>
+      <h2>Nikita<br> &amp;<br> Subham</h2>
+      <span>13th December 2026 • #NikitaWedsSubham</span>
+      <p>Designed &amp; Developed with ❤️ by dulhan ki behen</p>
+    </footer>
+  </main>
+  <!-- Background Music Audio -->
+<audio id="bgMusic" src="ishq-sufiyana1.mp3" preload="auto" loop></audio>
+
+
+
+
+
+<!-- Subtle Success Toast Notice -->
+<div id="wishesToast" class="wishes-toast" aria-hidden="true">
+  <h3>Your Blessing is on its Way! ✨</h3>
+  <p>Thank you for sending your warm wishes to Nikita &amp; Subham</p>
+</div>
+<!-- Floating Dove Flight Container -->
+<div id="doveFlightContainer" class="dove-flight-container" aria-hidden="true">
+  <video id="doveVideo" class="dove-flying-video" playsinline muted preload="auto">
+    <source src="dove-wishes-transparent.webm" type="video/webm" />
+    <source src="dove-wishes.mp4" type="video/mp4" />
+  </video>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="100%" height="100%">
+  <defs>
+    <!-- Rich Paper Gradient -->
+    <linearGradient id="paperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCF9F2"/>
+      <stop offset="50%" stop-color="#F5EFE3"/>
+      <stop offset="100%" stop-color="#E8DFC8"/>
+    </linearGradient>
+
+    <!-- Flap Highlight -->
+    <linearGradient id="flapGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F2E8D5"/>
+    </linearGradient>
+
+    <!-- Inner Shadow -->
+    <linearGradient id="innerShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D9CBB0" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#EFE6D4" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Flap Drop Shadow -->
+    <filter id="flapShadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#5C3641" flood-opacity="0.18"/>
+    </filter>
+
+    <!-- Subtle Outer Shadow -->
+    <filter id="envelopeGlow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#4A2832" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Base Envelope Body -->
+  <rect x="10" y="10" width="580" height="400" rx="14" fill="url(#paperGrad)" filter="url(#envelopeGlow)" stroke="#D4AF37" stroke-width="1.5" stroke-opacity="0.45"/>
+
+  <!-- Inner Pocket Lining Layer -->
+  <rect x="10" y="10" width="580" height="400" rx="14" fill="url(#innerShadow)"/>
+
+  <!-- Lower Left Diagonal Fold -->
+  <polygon points="10,410 300,225 10,120" fill="#F4EDE0" opacity="0.6" stroke="#D4AF37" stroke-width="0.75" stroke-opacity="0.3"/>
+
+  <!-- Lower Right Diagonal Fold -->
+  <polygon points="590,410 300,225 590,120" fill="#F4EDE0" opacity="0.6" stroke="#D4AF37" stroke-width="0.75" stroke-opacity="0.3"/>
+
+  <!-- Bottom Pocket Flap -->
+  <polygon points="10,410 300,240 590,410" fill="url(#paperGrad)" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.4"/>
+
+  <!-- Top Triangular Flap -->
+  <polygon points="10,10 590,10 300,265" fill="url(#flapGrad)" filter="url(#flapShadow)" stroke="#D4AF37" stroke-width="1.2" stroke-opacity="0.5"/>
+</svg>
