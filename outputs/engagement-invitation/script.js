@@ -38,7 +38,7 @@ async function loadAudioBuffer(url) {
 }
 
 // Start seamless looping
-function playSeamlessLoop(volume = 0.05) {
+function playSeamlessLoop(volume = 10.0) {
   if (!audioCtx || !audioBuffer) return;
 
   // Resume context if suspended by browser autoplay policy
@@ -93,7 +93,7 @@ function openEnvelope() {
   // Play background music with a slight delay
   const bgMusic = document.getElementById("bgMusic");
   if (bgMusic) {
-    bgMusic.volume = 0.05;
+    bgMusic.volume = 0.12;
     setTimeout(() => {
       bgMusic.play().catch((err) => {
         console.error("Audio playback error:", err);
@@ -265,39 +265,6 @@ function calculateScratchPercent() {
   return transparent / (pixels.length / 4);
 }
 
-/*function createParticleBurst(x, y, count = 40, type = "confetti") {
-  const colors = ["#d4af37", "#f5e7a1", "#e8a598", "#ffffff", "#b8860b", "#c29b38"];
-
-  for (let i = 0; i < count; i++) {
-    const particle = document.createElement("div");
-    const angle = Math.random() * Math.PI * 2;
-    const velocity = 4 + Math.random() * 6;
-    const size = 6 + Math.random() * 6;
-
-    particle.style.position = "fixed";
-    particle.style.left = `${x}px`;
-    particle.style.top = `${y}px`;
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size * (Math.random() > 0.5 ? 1 : 1.8)}px`;
-    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-    particle.style.borderRadius = Math.random() > 0.5 ? "50%" : "2px";
-    particle.style.pointerEvents = "none";
-    particle.style.zIndex = "99999";
-
-    document.body.appendChild(particle);
-
-    const destX = Math.cos(angle) * (velocity * 25);
-    const destY = Math.sin(angle) * (velocity * 25) + 60;
-
-    particle.animate([
-      { transform: "translate(0, 0) rotate(0deg) scale(1)", opacity: 1 },
-      { transform: `translate(${destX}px, ${destY}px) rotate(${Math.random() * 720}deg) scale(0.3)`, opacity: 0 }
-    ], {
-      duration: 1200 + Math.random() * 600,
-      easing: "cubic-bezier(0.25, 1, 0.5, 1)"
-    }).onfinish = () => particle.remove();
-  }
-}*/
 
 function revealScratchCard() {
   if (scratchRevealed) return;
