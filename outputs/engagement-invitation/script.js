@@ -352,7 +352,7 @@ function renderBlessings() {
   });
 }
 
-const SCRIPT_URL="https://script.google.com/macros/s/AKfycbwvXkBovkrXeWJQMe24LF2F9Za-lHBGGh4kDdVaefZb2njbBVW1tqYs2062UuuX0oM/exec"
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbz3ZgbKGqk56wub4IGnwMfKKWGgsFw3musSXVYK7uqa644u0LDLwwAoVRivoPaF7Ub3/exec"
 if (blessingForm) {
     blessingForm.addEventListener("submit", (e) => {
       e.preventDefault();
