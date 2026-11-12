@@ -212,7 +212,7 @@ body:has(.envelope-overlay.hidden) .hero {
   height: 100% !important;
   inset: 0;
   border-radius: 12px;
-  background: url("envelope1.jpg") center/100% 100% no-repeat !important;
+  background:  #f4e6d8 url("envelope1.jpg") center/100% 100% no-repeat !important;
   clip-path: polygon(0 45%, 50% 52%, 100% 45%, 100% 100%, 0 100%);
   z-index: 4;
   pointer-events: none;
@@ -236,7 +236,7 @@ body:has(.envelope-overlay.hidden) .hero {
   width: 100% !important;
   height: 100% !important;
   border-radius: 0;
-  background: url("envelope-top.jpeg") top center/150% 90% no-repeat !important;
+  background: #f4e6d8 url("envelope-top.jpeg") top center/150% 90% no-repeat !important;
   /* Extends point down to 64% */
   clip-path: polygon(0 0, 100% 0, 50% 64%) !important;
   z-index: 5;
