@@ -54,7 +54,7 @@ textarea {
   justify-content: center;
   overflow: hidden;
   perspective: 1100px;
-  background: url("envelope\ copy.jpeg") center/cover no-repeat;
+  background: url("fabric1.jpg") center/cover no-repeat;
   transition: opacity 700ms ease, visibility 700ms ease;
 }
 
@@ -74,9 +74,14 @@ textarea {
   visibility: hidden;
   transition: opacity 350ms ease,visibility 350ms ease !important;
 }
-
+.envelope-overlay.hidden ~ * .hero,
+.envelope-overlay.hidden ~ .hero,
+body:has(.envelope-overlay.hidden) .hero {
+  display: flex;
+}
 /* --- Hero Card with Visible Silk Roses Background --- */
 .hero {
+  display:none;
   position: relative;
   background-color: #fff7f6; /* Fallback tone */
   background-image: 
@@ -490,7 +495,7 @@ textarea {
 
 .section-panel {
   position: relative;
-  margin: 16px 0;
+  margin: 10px 0;
   padding: clamp(26px, 7vw, 48px) 18px;
   overflow: hidden;
   border: 1px solid rgba(183, 110, 121, 0.18);
@@ -1637,4 +1642,33 @@ footer {
   color: #ffd1dc;
   margin: 0;
   opacity: 0.95;
+}
+/* Remove top gap above the first hero card while keeping gaps for subsequent cards */
+.page-shell {
+  padding-top: 0 !important;
+}
+
+.hero,
+.hero.section-panel {
+  margin-top: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+/* Give the footer card the exact same 16px outer gap and card styling */
+.guestbook.section-panel {
+  margin-bottom: 10px !important;
+}
+
+/* Give the footer card matching left, right, and bottom cream margins */
+.footer-card {
+ 
+   margin: 16px 0 0 0 !important;
+}
+/* Desktop & Mobile: keep cream background only behind page shell */
+@media (min-width: 768px) {
+  .page-shell {
+    max-width: 480px !important;
+    margin: 0 auto !important;
+  }
 }

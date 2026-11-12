@@ -112,6 +112,7 @@ function openEnvelope() {
   window.setTimeout(() => {
     overlay.classList.add("hidden");
     document.body.classList.remove("no-scroll");
+    document.body.classList.add("envelope-opened");
   }, 1500);
 }
 

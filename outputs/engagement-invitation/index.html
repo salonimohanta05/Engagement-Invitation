@@ -7,7 +7,23 @@
   <title>Nikita & Subham | Engagement Invitation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="preload" as="image" href="fabric1.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="monogram.png" fetchpriority="high">
+  <style>
+    .envelope-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: #f6ece6;
+    }
+    .page-shell {
+      display: none !important;
+    }
+    body.envelope-opened .page-shell {
+      display: block !important;
+    }
+  </style>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -118,6 +134,7 @@
     <div>Thank you for sending your warm wishes to Nikita & Subham 🤗</div>
   </div>
 </form>
+</section>
     <footer class="footer-card">
       <div class="footer-floral footer-floral-left" aria-hidden="true"></div>
       <div class="footer-floral footer-floral-right" aria-hidden="true"></div>
